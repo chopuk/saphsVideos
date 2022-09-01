@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Saph's YouTube Videos
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="filterVideos()">
+        <i class="fas fa-microphone-alt fa-2x icon-colour"> </i>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col><ion-button expand="full" size="small" shape="round" fill="outline" color="dark" (click)="sortDate('ascending')">Newest</ion-button></ion-col>
+        <ion-col><ion-button expand="full" size="small" shape="round" fill="outline" color="dark" (click)="sortDate('descending')">Oldest</ion-button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-button expand="full" size="small" shape="round" fill="outline" color="dark" (click)="sortViews('ascending')">Views(h)</ion-button></ion-col>
+        <ion-col><ion-button expand="full" size="small" shape="round" fill="outline" color="dark" (click)="sortViews('descending')">Views(l)</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #pageTop>
+  <ion-list lines="none">
+    <ion-item *ngFor="let video of virtualFilteredSaphdata">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{ video.snippet.title }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <img [src]="video.snippet.thumbnails.high.url">
+          <ion-row>
+            <ion-col size="4">
+              <div class="views common">
+                Views: <br/>{{ video.views }}
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div class="likes common">
+                Likes: <br/>{{ video.likes }}
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div class="uploaded common">
+                Uploaded: <br/>{{ video.dateUploaded }}
+              </div>
+            </ion-col>
+          </ion-row>
+          <div>
+            <ion-button expand="full" shape="round" color="tertiary" (click)="openMyVideo(video.contentDetails.videoId)">
+              Play This Video
+            </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll threshold="20%" (ionInfinite)="loadData($event)" [disabled]="scrollingComplete">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

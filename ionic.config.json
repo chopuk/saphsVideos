@@ -1,0 +1,7 @@
+{
+  "name": "saphsVideos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

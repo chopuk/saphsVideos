@@ -1,0 +1,74 @@
+ion-title {
+  background: rgb(16, 151, 97);
+  color: blue;
+  font-size: 24px;
+}
+
+ion-toolbar {
+  --background: rgb(16, 151, 97);
+}
+
+ion-buttons {
+  background: rgb(16, 151, 97);
+}
+
+ion-searchbar {
+  --background: rgb(197, 212, 206);
+  --border-radius: 12px;
+  color: black;
+}
+
+ion-card {
+  --background: rgb(132, 168, 209);
+  border-radius: 12px;
+}
+
+ion-item {
+  --background: rgb(130, 143, 151);
+}
+
+img {
+  margin-bottom: 7px;
+}
+
+.views {
+  background: rgb(10, 12, 129);
+  color: rgb(248, 252, 251);
+}
+
+.likes {
+  background: rgb(236, 8, 8);
+  color: rgb(248, 252, 251);
+}
+
+.uploaded {
+  background: rgb(12, 128, 57);
+  color: rgb(248, 252, 251);
+}
+
+.common {
+  margin-bottom: 7px;
+  font-size: 12px;
+  border-radius: 12px;
+  min-width: 10px;
+  padding: 4px;
+  text-align: center;
+}
+
+.spinner-container {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+cdk-virtual-scroll-viewport {
+  height: 100vh;
+
+  ion-item {
+    height: 520px;
+  }
+}
+
+.icon-colour {
+  color: rgb(204, 36, 58)
+}

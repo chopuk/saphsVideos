@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Saphs Videos</string>
+    <string name="title_activity_main">Saphs Videos</string>
+    <string name="package_name">com.bigchopper.saphsVideos</string>
+    <string name="custom_url_scheme">com.bigchopper.saphsVideos</string>
+</resources>
