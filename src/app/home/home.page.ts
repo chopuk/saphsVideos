@@ -15,8 +15,6 @@ export class HomePage {
 
   @ViewChild(IonContent) content: IonContent
 
-
-  chopper = 0
   saphdata: any[]
   remainingSaphdata: any[]
   filteredSaphdata: any[]
